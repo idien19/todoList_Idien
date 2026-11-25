@@ -1,0 +1,188 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Baby Doll";
+  src: url("./assets/Baby Doll.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  font-family: "Baby Doll", sans-serif;
+  background-color: #f1f1f1;
+}
+
+ul {
+  margin: 8px auto 20px;
+  padding: 0;
+  width: 70%;
+  list-style-type: none;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 96px 12px 40px;
+  background: rgb(247, 224, 231);
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+ul li:hover {
+  background: #968b99;
+  color: #fff;
+}
+
+ul li.checked {
+  background: rgb(246, 192, 208);
+  color: #fff;
+}
+
+ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+.close,
+.edit {
+  position: absolute;
+  top: 0;
+  padding: 12px 10px;
+  border: 0;
+  background: transparent;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.close img,
+.edit img {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+.close {
+  right: 0;
+}
+
+.edit {
+  right: 30px;
+}
+
+.close:hover {
+  background-color: #73ABA8;
+  color: white;
+}
+
+.edit:hover {
+  background-color: #7C8EA2;
+  color: white;
+}
+
+.header {
+  background-color: #F6C0D0;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+}
+
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+input {
+  margin: 0;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  min-width: 0;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.addBtn {
+  padding: 10px 24px;
+  border: 0;
+  background: #D0A5C0;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 8px;
+}
+
+.addBtn:hover {
+  background-color: #8E7C93;
+}
+
+.addTask {
+  width: 70%;
+  margin: 20px auto 0;
+}
+
+.task-main-row,
+.task-extra-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.task-extra-row {
+  margin-top: 12px;
+}
+
+.task-main-row input {
+  flex: 1;
+}
+
+.task-extra-row input {
+  flex: 1;
+}
+
+.task-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.task-text {
+  font-weight: bold;
+}
+
+.task-description {
+  font-size: 0.9em;
+  color: #8E7C93;
+}
+
+.task-date {
+  color: #6b5969;
+  font-size: 0.8em;
+}
+
+@media (max-width: 600px) {
+  .addTask,
+  ul {
+    width: 90%;
+  }
+
+  .task-extra-row {
+    flex-direction: column;
+  }
+}
